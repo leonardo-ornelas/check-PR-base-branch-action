@@ -25,6 +25,7 @@ async function run() {
         }
 
         const baseBranch = pull_request.base.ref;
+        core.debug(`baseBranch: ${baseBranch}`);
 
         const ignore = core.getMultilineInput('ignore');
         core.debug(`ignore : ${ignore}`);
