@@ -27,6 +27,7 @@ async function run() {
         const baseBranch = pull_request.base.ref;
 
         const ignore = core.getMultilineInput('ignore');
+        core.debug(`ignore : ${ignore}`);
         if (ignore.length > 0 && ignore.some((el) => baseBranch === el)) {
             core.info(`Skipping checks since ${baseBranch} is in the ignored list - ${ignore}`);
             return
@@ -34,7 +35,7 @@ async function run() {
 
         const spec = JSON.parse(core.getInput('spec'));
 
-        core.debug(spec);
+        
 
         var specKey = getSpecKey(spec, baseBranch);
 
