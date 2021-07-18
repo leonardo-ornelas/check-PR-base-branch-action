@@ -38,14 +38,16 @@ async function run() {
 
         const spec = JSON.parse(specStr);
 
-        if (specKey == null) {
-            core.info(`Skipping cheks since ${baseBranch} is not found`);
+        const branchKey = getSpecKey(spec, baseBranch);
+
+        if (branchKey == null) {
+            core.info(`Skipping checks since ${baseBranch} is not found`);
             return;
         }
 
         const branch = pull_request.head.ref;
 
-        const specBranch = spec[specKey];
+        const specBranch = spec[branchKey];
 
         let isCorrect = false;
         if (Array.isArray(specBranch)) {
