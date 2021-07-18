@@ -10,10 +10,10 @@ Github Action for check base branch on PR.
 
 Example:
 ```json
-{
-    "develop": ["/feature\/*/", "/hotfix\/*/"],
-    "main": "/(hotfix|release)\/*/"
-}
+    {
+    "develop": ["feature/.*", "hotfix/.*","release/.*"],
+    "main": "(hotfix|release)/.*"
+    }
 ```
 
 ## `ignore`
