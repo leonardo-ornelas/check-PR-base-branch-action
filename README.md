@@ -1,6 +1,6 @@
 # Check PR base branch against spec
 
-Github Action for check base branch on PR.
+Github Action for check PR base branch against spec
 
 ## Inputs
 
