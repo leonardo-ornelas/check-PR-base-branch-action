@@ -14,6 +14,5 @@ jobs:
         with:
           spec: >
             {
-            "develop": ["/feature\/*/", "/hotfix\/*/"],
-            "main": "/(hotfix|release)\/*/"
+            "develop": ["/feature\/*/", "/hotfix\/*/"]
             }

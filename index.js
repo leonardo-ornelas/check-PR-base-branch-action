@@ -35,16 +35,13 @@ async function run() {
 
         const specStr = core.getInput('spec');
         core.debug(`spec: ${specStr}`);
-        const spec = JSON.parse(specStr);
 
-        core.debug(`specJson: ${spec}`);
-        var specKey = getSpecKey(spec, baseBranch);
+        const spec = JSON.parse(specStr);
 
         if (specKey == null) {
             core.info(`Skipping cheks since ${baseBranch} is not found`);
             return;
         }
-
 
         const branch = pull_request.head.ref;
 
@@ -59,7 +56,7 @@ async function run() {
 
 
         if (!isCorrect) {
-            core.setFailed(`Your branch is not allowed to PR into ${branch}`);
+            core.setFailed(`Your branch is not allowed to PR into ${baseBranch}`);
             return
         }
 
