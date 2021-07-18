@@ -18,7 +18,6 @@ async function run() {
 
         const { eventName, payload: { pull_request } } = github.context
 
-        core.info(`Event name: ${eventName}`);
         if (validEvent.indexOf(eventName) < 0) {
             core.setFailed(`Invalid event: ${eventName}`);
             return;
@@ -38,7 +37,7 @@ async function run() {
         core.debug(`spec: ${specStr}`);
         const spec = JSON.parse(specStr);
 
-        core.debug(`spec: ${spec}`);
+        core.debug(`specJson: ${spec}`);
         var specKey = getSpecKey(spec, baseBranch);
 
         if (specKey == null) {
