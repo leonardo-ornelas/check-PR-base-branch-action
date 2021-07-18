@@ -12,8 +12,4 @@ jobs:
       - name: This action step
         uses: ./ # Uses an action in the root directory
         with:
-          spec: >
-            "{
-            "develop": ["/feature\/*/", "/hotfix\/*/"],
-            "main": "/(hotfix|release)\/*/"
-            }"
+          spec: "teste"
