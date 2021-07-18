@@ -54,7 +54,7 @@ async function run() {
         if (Array.isArray(specBranch)) {
             isCorrect = specBranch.some(b => branch.match(b));
         } else {
-            isCorrect = specBranch.match(branch);
+            isCorrect = branch.match(specBranch);
         }
 
 
