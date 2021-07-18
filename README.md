@@ -4,6 +4,7 @@ Github Action for check base branch on PR.
 
 ## Inputs
 
+
 ## `spec`
 
 **Required** Json definition for allowed base branch for given PR branch.
