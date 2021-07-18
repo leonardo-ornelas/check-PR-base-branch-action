@@ -34,6 +34,8 @@ async function run() {
 
         const spec = JSON.parse(core.getInput('spec'));
 
+        core.debug(spec);
+
         var specKey = getSpecKey(spec, baseBranch);
 
         if (specKey == null) {
