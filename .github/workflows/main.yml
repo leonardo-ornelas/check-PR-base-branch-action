@@ -1,0 +1,19 @@
+on: 
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to test this action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: This action step
+        uses: ./ # Uses an action in the root directory
+        with:
+          spec: >
+            {
+            "develop": ["feature/.*", "hotfix/.*","release/.*"],
+            "main": "(hotfix|release)/.*"
+            }

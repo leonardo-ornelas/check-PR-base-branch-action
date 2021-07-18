@@ -25,9 +25,9 @@ Ignored base branch name list
 ```yaml
 uses: leonardo-ornelas/lint-base-branch-action@main
 with:
-  spec: |
+  spec: >
     {
-    "develop": ["/feature\/*/", "/hotfix\/*/"],
-    "main": "/(hotfix|release)\/*/"
+    "develop": ["feature/.*", "hotfix/.*","release/.*"],
+    "main": "(hotfix|release)/.*"
     }
 ```
