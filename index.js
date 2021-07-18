@@ -48,13 +48,13 @@ async function run() {
 
         const branch = pull_request.head.ref;
 
-        const specValor = spec[specKey];
+        const specBranch = spec[specKey];
 
         let isCorrect = false;
-        if (Array.isArray(specValor)) {
-            isCorrect = specValor.some(valor => branch.match(valor));
+        if (Array.isArray(specBranch)) {
+            isCorrect = specBranch.some(b => branch.match(b));
         } else {
-            isCorrect = specValor.match(valor);
+            isCorrect = specBranch.match(branch);
         }
 
 
