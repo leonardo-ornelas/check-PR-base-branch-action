@@ -46,7 +46,7 @@ async function run() {
         }
 
         const branch = pull_request.head.ref;
-        core.debug(`currentBranch: ${specBranch}`);
+        core.debug(`currentBranch: ${branch}`);
 
         const specBranch = spec[branchKey];
         core.debug(`specBranch: ${specBranch}`);
