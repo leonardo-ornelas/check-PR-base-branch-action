@@ -48,6 +48,7 @@ async function run() {
         const branch = pull_request.head.ref;
 
         const specBranch = spec[branchKey];
+        core.debug(`specBranch: ${specBranch}`);
 
         let isCorrect = false;
         if (Array.isArray(specBranch)) {
