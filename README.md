@@ -1,6 +1,6 @@
-# Lint base branch
+# Check PR base branch against spec
 
-Github Action for check base branch on PR.
+Github Action for check PR base branch against spec
 
 ## Inputs
 
@@ -23,7 +23,7 @@ Ignored base branch name list
 ## Example usage
 
 ```yaml
-uses: leonardo-ornelas/lint-base-branch-action@main
+uses: leonardo-ornelas/check-PR-base-branch-action@main
 with:
   spec: >
     {
