@@ -23,8 +23,7 @@ async function run() {
             core.setFailed(`Invalid event: ${eventName}`);
             return;
         }
-
-        core.info(`pull_request : ${pull_request}`);
+        
         const baseBranch = pull_request.base.ref;
 
         const ignore = core.getMultilineInput('ignore');
@@ -34,9 +33,9 @@ async function run() {
             return
         }
 
-        const spec = JSON.parse(core.getInput('spec'));
-
-        
+        const specStr = core.getInput('spec');
+        core.debug(`spec: ${specStr}`);
+        const spec = JSON.parse(specStr);
 
         var specKey = getSpecKey(spec, baseBranch);
 
