@@ -24,7 +24,7 @@ async function run() {
             return;
         }
 
-        core.debug(`pull_request : ${pull_request}`);
+        core.info(`pull_request : ${pull_request}`);
         const baseBranch = pull_request.base.ref;
 
         const ignore = core.getMultilineInput('ignore');
