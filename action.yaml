@@ -1,4 +1,4 @@
-name: 'Lint base branch'
+name: 'Check PR base branch'
 author: 'Leonardo Ornelas'
 description: 'Github Action for check base branch on PR'
 inputs:
