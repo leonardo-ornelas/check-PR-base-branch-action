@@ -23,7 +23,7 @@ Ignored base branch name list
 ## Example usage
 
 ```yaml
-uses: leonardo-ornelas/lint-base-branch-action@main
+uses: leonardo-ornelas/check-PR-base-branch-action@main
 with:
   spec: >
     {
