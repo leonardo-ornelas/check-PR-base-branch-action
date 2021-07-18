@@ -58,7 +58,7 @@ async function run() {
         }
 
 
-        if (isCorrect) {
+        if (!isCorrect) {
             core.setFailed(`Your branch is not allowed to PR into ${branch}`);
             return
         }
