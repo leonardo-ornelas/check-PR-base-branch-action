@@ -1,0 +1,13 @@
+name: 'Lint base branch'
+author: 'Leonardo Ornelas'
+description: 'Github Action for check base branch on PR'
+inputs:
+  spec:
+    description: 'Json definition for allowed base branch for given PR branch'
+    required: true
+  ignore:
+    description: 'Ignored base branch list'
+    required: false
+runs:
+  using: 'node12'
+  main: 'index.js'
