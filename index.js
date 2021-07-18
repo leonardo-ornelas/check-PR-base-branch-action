@@ -12,21 +12,19 @@ const validEvent = ['pull_request'];
 const getSpecKey = (spec, branch) =>
     Object.keys(spec).find((target) => RegExp(target).test(branch));
 
-/**
- * 
- * @param {string} eventName Github event name
- * @param {string} baseBranch Destination branch 
- * @param {string} branch Current Branch
- * @returns 
- */
-async function run(eventName, baseBranch, branch) {
+
+async function run() {
     try {
+
+        const { eventName, payload: { pull_request } } = github.context
 
         core.info(`Event name: ${eventName}`);
         if (validEvent.indexOf(eventName) < 0) {
             core.setFailed(`Invalid event: ${eventName}`);
             return;
         }
+
+        const baseBranch = pull_request.base.ref;
 
         const ignore = core.getMultilineInput('ignore');
         if (ignore.length > 0 && ignore.some((el) => baseBranch === el)) {
@@ -43,6 +41,8 @@ async function run(eventName, baseBranch, branch) {
             return;
         }
 
+
+        const branch = pull_request.head.ref;
 
         const specValor = spec[specKey];
 
@@ -65,6 +65,6 @@ async function run(eventName, baseBranch, branch) {
     }
 }
 
-const {eventName, payload : {pull_request} } = github.context
 
-run(eventName,pull_request.base.ref,pull_request.head.ref);
+
+run();
