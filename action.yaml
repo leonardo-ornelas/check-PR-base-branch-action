@@ -1,5 +1,8 @@
 name: 'Check PR base branch'
 author: 'Leonardo Ornelas'
+branding:
+  icon: 'check-circle'
+  color: 'check-circle'
 description: 'Github Action for check base branch on PR'
 inputs:
   spec:
