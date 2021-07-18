@@ -67,4 +67,4 @@ async function run(eventName, baseBranch, branch) {
 
 const {eventName, payload : {pull_request} } = github.context
 
-run(eventName,pull_request?.base.ref,pull_request?.head.ref);
+run(eventName,pull_request.base.ref,pull_request.head.ref);
